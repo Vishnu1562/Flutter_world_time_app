@@ -23,7 +23,9 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[600],
       ),
       body: Center(
-        child: Image.asset('assets/ship.jpg'),
+        child: IconButton(onPressed: () {},
+            icon: Icon(Icons.alternate_email),
+        color: Colors.amber,)
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
