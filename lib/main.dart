@@ -23,14 +23,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[600],
       ),
       body: Center(
-        child: Text('India',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.black,
-          ),
-        ),
+        child: Image.asset('assets/ship.jpg'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
