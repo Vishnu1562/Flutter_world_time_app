@@ -1,36 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_world_time_app/pages/home.dart';
+import 'package:flutter_world_time_app/pages/loading.dart';
+import 'package:flutter_world_time_app/pages/location.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home()
+  initialRoute: '/home',
+  routes: {
+    '/': (context) => Loading(),
+    '/home': (context) => Home(),
+    '/location': (context) => Location(),
+  },
 ));
-
-
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('World Time',
-          style: TextStyle(
-            fontSize: 26,
-            fontWeight: FontWeight.w600,
-            color: Colors.black,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.green[600],
-      ),
-      body: Container(
-        color: Colors.blue,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text('click'),
-        backgroundColor: Colors.green[400],
-      ),
-    );
-  }
-}
 
