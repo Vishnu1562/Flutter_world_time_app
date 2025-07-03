@@ -8,9 +8,17 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        backgroundColor: Colors.blue[900],
+        title: Text('Choose Location'),
+        centerTitle: true,
+        elevation: 0,
+      ),
       body: Text('Location'),
     );
   }
