@@ -14,7 +14,7 @@ class _LoadingState extends State<Loading> {
 
 
 void setUpWorldTime() async {
-  WorldTime instance = WorldTime(location: 'Berlin', flag: 'uk.png', url: '/Berlin');
+  WorldTime instance = WorldTime(location: 'Berlin', flag: 'uk.png', url: 'Europe/Berlin');
   await instance.getTime();
   Navigator.pushReplacementNamed(context, '/home', arguments: {
     'location': instance.location,

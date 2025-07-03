@@ -14,14 +14,24 @@ class WorldTime{
 
   Future<void> getTime() async{
     try{
-      Response response = await get(Uri.parse('https://api.api-ninjas.com/v1/worldtime?city=$url'));
+      // Response response = await get(Uri.parse('https://api.api-ninjas.com/v1/worldtime?city=$url'));
+      Response response = await get(Uri.parse('https://timeapi.io/api/Time/current/zone?timeZone=$url'));
+
       Map data = jsonDecode(response.body);
 
-      String datetime = data['datetime'];
-      String offset = data['utc_offset'].substring(1,3);
+      // String datetime = data['datetime'];
+      // print(datetime);
+      // String offset = data['utc_offset'].substring(1,3);
+      //
+      // DateTime now = DateTime.parse(datetime);
+      // now = now.add(Duration(hours: int.parse(offset)));
 
-      DateTime now = DateTime.parse(datetime);
-      now = now.add(Duration(hours: int.parse(offset)));
+
+      String datetimeString = data['dateTime']; // Use 'dateTime' from your sample response
+      // Ensure this key matches the actual API response
+
+      // The datetimeString from the API is already the local time for the zone
+      DateTime now = DateTime.parse(datetimeString);
 
       isDaytime = now.hour > 6 && now.hour < 20 ? true : false;
       time = DateFormat.jm().format(now);
